@@ -1,3 +1,4 @@
 require "./lib/rack/git"
 
-run Rack::Git.new
+use Rack::Git
+run lambda { |env| [200, { "Content-Type" => "text/plain" }, ["OK"]] }
